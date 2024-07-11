@@ -7,23 +7,23 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 def retrieve_information(query):
     # Simulating a retrieval function, replace with actual retrieval logic
     response = openai.Completion.create(
-        engine="text-davinci-003",
+        engine="gpt-4o",
         prompt=f"Retrieve information about: {query}",
-        max_tokens=150
+        max_tokens=200
     )
     return response.choices[0].text.strip()
 
 def chat_with_openai(message):
     response = openai.Completion.create(
-        engine="text-davinci-003",
+        engine="gpt-4o",
         prompt=message,
-        max_tokens=150
+        max_tokens=200
     )
     return response.choices[0].text.strip()
 
 def main():
-    st.title("OpenAI Chatbot")
-    st.write("Welcome to the OpenAI Chatbot! Ask me anything.")
+    st.title("PFAS Chatbot")
+    st.write("Welcome to the Chatbot! Ask me anything.")
 
     if "conversation" not in st.session_state:
         st.session_state.conversation = []
