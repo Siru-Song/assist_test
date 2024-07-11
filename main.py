@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 
 # Set your OpenAI API key
-openai.api_key = "your-api-key"
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 def retrieve_information(query):
     # Simulating a retrieval function, replace with actual retrieval logic
